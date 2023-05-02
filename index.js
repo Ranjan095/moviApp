@@ -5,10 +5,10 @@ const { connection } = require("./db");
 const { userRoute } = require("./routes/user.route");
 const { postRoute } = require("./routes/post.route");
 const { auth } = require("./middlewere/auth");
-
+const cors = require('cors')
 const app = express();
 app.use(express.json());
-
+app.use(cors())
 app.use("/users", userRoute);
 
 app.use(auth);
